@@ -1,0 +1,7 @@
+.App {
+  text-align: center;
+}
+.Nav .ant-menu-submenu-title{
+  display: flex;
+  justify-content: space-around;
+}

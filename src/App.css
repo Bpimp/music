@@ -1,7 +1,44 @@
-.App {
-  text-align: center;
+body,html,h1,ul,li{
+  margin:0;
+  padding:0
 }
-.Nav .ant-menu-submenu-title{
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+header{
+  background:#242424;
+  height:70px;
+} 
+header #nav{
+  width:1100px;
+  margin:0 auto;
+}
+header #nav .logo{
+  height:70px;
+  float: left;
+  padding-right:20px;
+}
+header #nav .m-nav{
   display: flex;
-  justify-content: space-around;
+  float: left;
 }
+header #nav .m-nav li a{
+  color:#b6b4b6;
+  height:70px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 70px;
+  padding:0 19px;
+  position: relative;
+}
+header #nav .m-nav li a sub{
+  color:#c20c0c;
+  position: absolute;
+  top:37px;
+  left:42%;
+  display: none;
+}
+

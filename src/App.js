@@ -1,11 +1,13 @@
 import React from 'react';
+import Nav from './components/header/nav';
+import RouterIndex from './router/RouterIndex';
 import './App.css';
-import Nav from './components/nav';
 
 function App() {
   return (
     <div className="App">
-      <Nav className="Nav"/>
+      <Nav/>
+      <RouterIndex/>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route,Switch} from 'react-router-dom';
+import {Route,Switch,Redirect} from 'react-router-dom';
 import Index from '../view/index/index';
 
 class RouterIndex extends React.Component{
@@ -14,3 +14,4 @@ class RouterIndex extends React.Component{
         )
     }
 }
+export default RouterIndex;

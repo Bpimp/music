@@ -10,29 +10,32 @@ a{
 }
 header{
   background:#242424;
-  height:70px;
 } 
 header #nav{
   width:1100px;
   margin:0 auto;
+  display: flex;
 }
 header #nav .logo{
   height:70px;
-  float: left;
   padding-right:20px;
 }
 header #nav .m-nav{
   display: flex;
-  float: left;
 }
 header #nav .m-nav li a{
   color:#b6b4b6;
+  display: block;
   height:70px;
   text-align: center;
   font-size: 14px;
   line-height: 70px;
   padding:0 19px;
   position: relative;
+}
+header #nav .m-nav li a:hover{
+  color:#fff;
+  background: #000;
 }
 header #nav .m-nav li a sub{
   color:#c20c0c;
@@ -41,4 +44,26 @@ header #nav .m-nav li a sub{
   left:42%;
   display: none;
 }
-
+header #subnav{
+  min-height:5px;
+  background-color:#c20c0c;
+}
+header #subnav .subnavList{
+  display: flex;
+  margin:0 auto;
+  width:1100px;
+  padding-left:190px;
+}
+header #subnav .subnavList a{
+  height:34px;
+  color: #fff;
+  text-align: center;
+  line-height: 34px;
+  font-size: 12px;
+  padding:3px 15px 5px;
+  border-radius: 17px;
+  margin:0 10px;
+}
+header #subnav .subnavList a:hover{
+  background: #9b0909;
+}

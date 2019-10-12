@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import I from './Icon';
 import SubNav from './subNav';
 
@@ -7,16 +8,20 @@ class Nav extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            currentHref:'/'
+            currentHref:'/all'
         }
     }
     handleClick=(e)=>{
         let href=e.target.getAttribute('href')
-        this.setState({
-            currentHref:href
+        this.props.dispatch(dispatch=>{
+            dispatch({
+                type:'CHANGE_SELECT',
+                checkedURL:href
+            })
         })
     }
     render(){
+        let {list,checkedURL}=this.props;
         return (
             <header>
                 <nav id="nav">
@@ -26,12 +31,14 @@ class Nav extends React.Component{
                         </Link> 
                     </h1>
                     <ul className="m-nav" onClick={(e)=>this.handleClick(e)}>
-                        <li><Link to='/'>发现音乐<I/></Link></li>
-                        <li><Link to='/mymusic'>我的音乐<I/></Link></li>
-                        <li><Link to='/fiends'>朋友<I/></Link></li>
-                        <li><Link to='/shop'>商城<I/></Link></li>
-                        <li><Link to='/musician'>音乐人<I/></Link></li>
-                        <li><Link to='/download'>下载客户端<I/></Link></li>
+                        {list.map((item)=>(
+                            <li
+                                key={item.url}
+                            ><Link 
+                                className={item.url===checkedURL?'active':''}
+                                to={item.url}
+                            >{item.title}<I/></Link></li>
+                        ))}
                     </ul>
                 </nav>
                 <SubNav/>
@@ -39,4 +46,4 @@ class Nav extends React.Component{
         )
     }
 }
-export default Nav;
+export default connect(state=>state.NavList)(Nav);

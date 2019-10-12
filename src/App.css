@@ -17,7 +17,6 @@ header #nav{
   display: flex;
 }
 header #nav .logo{
-  height:70px;
   padding-right:20px;
 }
 header #nav .m-nav{
@@ -32,6 +31,10 @@ header #nav .m-nav li a{
   line-height: 70px;
   padding:0 19px;
   position: relative;
+}
+header #nav .m-nav li .active{
+  color:#fff;
+  background: #000;
 }
 header #nav .m-nav li a:hover{
   color:#fff;
